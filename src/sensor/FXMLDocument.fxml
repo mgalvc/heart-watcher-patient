@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="250.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sensor.FXMLDocumentController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="241.0" prefWidth="405.0" spacing="20.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="405.0" spacing="20.0">
+               <children>
+                  <JFXTextField fx:id="serverAddress" labelFloat="true" promptText="Server address" />
+                  <JFXTextField fx:id="serverPort" labelFloat="true" promptText="Port" />
+                  <JFXButton fx:id="ok" onAction="#configureConnection" text="OK" />
+               </children>
+            </HBox>
+            <Label fx:id="info" alignment="CENTER" contentDisplay="CENTER" text="Patient Info" />
+            <HBox alignment="CENTER" prefHeight="20.0" prefWidth="548.0" spacing="10.0">
+               <children>
+                  <JFXRadioButton fx:id="resting" text="Resting">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="movement" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="running" text="Running" toggleGroup="$movement" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <JFXTextField fx:id="heart_rate" labelFloat="true" maxWidth="-Infinity" prefHeight="23.0" prefWidth="175.0" promptText="Heart rate" />
+                  <Label text="bpm" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="548.0" spacing="10.0">
+               <children>
+                  <JFXTextField fx:id="systolic" labelFloat="true" prefHeight="23.0" prefWidth="75.0" promptText="Systolic" />
+                  <Label text="/">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="diastolic" labelFloat="true" prefHeight="23.0" prefWidth="75.0" promptText="Diastolic" />
+                  <Label text="mmHg" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</FlowPane>
